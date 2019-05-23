@@ -25,18 +25,7 @@
         </div>
     </nav>
     <div class="container">
-        <h1>Sample route</h1>
-        <form action="/register" method="POST">
-            <input type="email" name="email" placeholder="Type your email">
-            <input type="password" name="password" placeholder="Type your password">
-            <input type="submit" value="Sign up">
-        </form>
-        <h2>Login</h2>
-        <form action="/login" method="POST">
-            <input type="email" name="email" placeholder="Type your email">
-            <input type="password" name="password" placeholder="Type your password">
-            <input type="submit" value="Log in">
-        </form>
+        <h1>Error: {{message}}</h1>
     </div>
 </body>
 </html>
