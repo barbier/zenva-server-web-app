@@ -3,7 +3,7 @@ const router = express.Router()
 const passport = require('passport')
 
 router.post('/', passport.authenticate('localLogin', {
-    successRedirect: '/account'
+    successRedirect: '/account',
 }))
 
 module.exports = router

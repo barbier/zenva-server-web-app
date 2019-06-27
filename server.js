@@ -10,7 +10,7 @@ const registerRoute = require('./routes/register')
 const loginRoute = require('./routes/login')
 const accountRoute = require('./routes/account')
 
-mongoose.connect('mongodb://localhost/sampleStore', (err, data) => {
+mongoose.connect('mongodb://localhost/sampleStore', { useNewUrlParser: true }, (err, data) => {
     if (err) {
         console.log(`Error: ${err}`)
         return

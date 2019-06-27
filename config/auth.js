@@ -31,4 +31,24 @@ module.exports = passport => {
     })
 
     passport.use('localLogin', localLogin)
+    
+    const localRegister = new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'password',
+        passReqToCallback: true,
+    }, (req, email, password, next) => {
+        User.findOne({email}, (error, user) => {
+            if (error) return next(error)
+
+            if (user !== null) return next(new Error('User already exists, please log in.'))
+
+            User.create({email, password}, (error, user) => {
+                if (error) return next(error)
+
+                next(null, user)
+            })
+        })
+    })
+
+    passport.use('localRegister', localRegister)
 }
